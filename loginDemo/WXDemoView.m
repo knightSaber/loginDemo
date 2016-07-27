@@ -30,6 +30,8 @@
     
     window.hidden = NO;
     
+//    [WXWindow sharedInstance].hidden = YES;
+    
 }
 
 

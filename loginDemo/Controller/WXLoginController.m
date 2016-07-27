@@ -211,7 +211,7 @@
 - (IBAction)loginButtonClick {
     
     //退出登录
-    [WXWindow sharedInstance].hidden = YES;
+    [WXWindow hideWindow];
     
 }
 

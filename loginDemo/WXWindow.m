@@ -12,7 +12,7 @@
 @implementation WXWindow
 
 + (instancetype)sharedInstance{
-
+    
     static WXWindow * sharedInstance = nil;
     
     static dispatch_once_t onceToken;
@@ -47,8 +47,17 @@
 }
 
 + (void)hideWindow{
-
-    [WXWindow sharedInstance].hidden = YES;
+    
+    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        
+        [WXWindow sharedInstance].frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        
+    } completion:^(BOOL finished) {
+        
+        [WXWindow sharedInstance].hidden = YES;
+        
+    }];
+    
 
 }
 
